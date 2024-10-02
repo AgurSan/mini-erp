@@ -1,0 +1,75 @@
+# Dépendances
+node_modules/
+/.pnp
+.pnp.js
+
+# Production
+/build
+/dist
+
+# Fichiers de build
+*.tsbuildinfo
+
+# Fichiers de logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environnement
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Système d'exploitation
+.DS_Store
+Thumbs.db
+
+# Fichiers de test et couverture
+/coverage
+
+# Fichiers temporaires
+*.tmp
+*.temp
+
+# Fichiers de cache
+.cache/
+.eslintcache
+
+# Fichiers spécifiques à Vite
+/front/.vite/
+
+# Fichiers de build TypeScript
+*.js
+*.js.map
+/back/dist/
+/front/dist/
+
+# Fichiers de configuration locaux
+*.local
+
+# Fichiers de verrouillage de package
+package-lock.json
+yarn.lock
+
+# Fichiers de sauvegarde
+*.bak
+
+# Logs
+logs
+*.log
+
+# Fichiers de débogage
+.debug
+
+# Fichiers de configuration d'exécution
+.env.*.local
+
+Projet.md
