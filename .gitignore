@@ -71,7 +71,6 @@ logs
 
 # Fichiers de configuration d'exécution
 .env.*.local
-
 Projet.md
 
 ./backend/features.md
