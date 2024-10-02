@@ -73,3 +73,5 @@ logs
 .env.*.local
 
 Projet.md
+
+./backend/features.md
