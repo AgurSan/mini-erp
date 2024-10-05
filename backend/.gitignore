@@ -1,1 +1,6 @@
 features.md
+# Fichier de configuration d'environnement
+.env
+
+# Dossier de distribution
+dist/

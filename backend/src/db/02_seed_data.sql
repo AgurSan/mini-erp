@@ -1,18 +1,18 @@
--- Insertion de données dans la table users
+-- tables users seed   
 INSERT INTO users (username, email, password_hash, role) VALUES
 ('admin_user', 'admin@example.com', 'hashed_password_1', 'admin'),
 ('manager_user', 'manager@example.com', 'hashed_password_2', 'manager'),
 ('employee1', 'employee1@example.com', 'hashed_password_3', 'employee'),
 ('employee2', 'employee2@example.com', 'hashed_password_4', 'employee');
 
--- Insertion de données dans la table product_categories
+-- product categories seed  
 INSERT INTO product_categories (name, description) VALUES
 ('Electronics', 'Electronic devices and accessories'),
 ('Clothing', 'Apparel and fashion items'),
 ('Books', 'Printed and digital books'),
 ('Home & Garden', 'Items for home and garden');
 
--- Insertion de données dans la table products
+-- products seed  
 INSERT INTO products (name, description, price, stock_quantity, category_id) VALUES
 ('Smartphone', 'Latest model smartphone', 699.99, 50, 1),
 ('Laptop', 'High-performance laptop', 1299.99, 30, 1),
@@ -23,14 +23,14 @@ INSERT INTO products (name, description, price, stock_quantity, category_id) VAL
 ('Plant Pot', 'Ceramic plant pot', 9.99, 150, 4),
 ('Garden Tools Set', 'Essential garden tools', 39.99, 40, 4);
 
--- Insertion de données dans la table orders
+-- tables orders seed  
 INSERT INTO orders (user_id, status, total_amount) VALUES
 (3, 'pending', 734.97),
 (4, 'processing', 1324.98),
 (3, 'shipped', 64.98),
 (4, 'delivered', 39.99);
 
--- Insertion de données dans la table order_items
+-- tables order_items seed  
 INSERT INTO order_items (order_id, product_id, quantity, unit_price) VALUES
 (1, 1, 1, 699.99),
 (1, 3, 1, 19.99),
@@ -41,7 +41,7 @@ INSERT INTO order_items (order_id, product_id, quantity, unit_price) VALUES
 (3, 5, 1, 14.99),
 (4, 7, 4, 9.99);
 
--- Insertion de données dans la table activity_logs
+-- tables activity_logs seed  
 INSERT INTO activity_logs (user_id, action, details) VALUES
 (1, 'User Login', '{"ip": "192.168.1.1", "device": "desktop"}'),
 (2, 'Product Added', '{"product_id": 1, "quantity": 50}'),

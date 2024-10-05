@@ -1,4 +1,4 @@
--- Création de la table des utilisateurs
+-- table users
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
@@ -9,14 +9,14 @@ CREATE TABLE users (
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- Création de la table des catégories de produits
+-- tables product_categories
 CREATE TABLE product_categories (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     description TEXT
 );
 
--- Création de la table des produits
+-- tables products
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE products (
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- Création de la table des commandes
+-- tables orders
 CREATE TABLE orders (
     id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users(id),
@@ -38,7 +38,7 @@ CREATE TABLE orders (
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- Création de la table des détails de commande
+-- tables order_items
 CREATE TABLE order_items (
     id SERIAL PRIMARY KEY,
     order_id INTEGER REFERENCES orders(id),
@@ -47,7 +47,7 @@ CREATE TABLE order_items (
     unit_price DECIMAL(10, 2) NOT NULL
 );
 
--- Création de la table pour les logs d'activité
+-- tables activity_logs
 CREATE TABLE activity_logs (
     id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users(id),
@@ -56,7 +56,7 @@ CREATE TABLE activity_logs (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- Ajout d'index pour améliorer les performances
+-- index
 CREATE INDEX idx_products_category ON products(category_id);
 CREATE INDEX idx_orders_user ON orders(user_id);
 CREATE INDEX idx_order_items_order ON order_items(order_id);

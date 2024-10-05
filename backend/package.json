@@ -6,16 +6,17 @@
     "start": "ts-node dist/index.ts",
     "build": "tsc && cp -R src/config dist/ && cp -R src/db dist/ && find dist -name '*.ts' -type f -delete",
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
-    "db:init": "npm run build && node dist/config/initDb.js",
     "pg:start": "sudo docker-compose up -d",
     "pg:stop": "sudo docker-compose down",
-    "pgadmin:start": "pgadmin4 --port 8080",
-    "pg:setup": "npm run pg:start && npm run db:init && npm run pgadmin:start"
+    "pgadmin:start": "sudo apt update && sudo apt install wslu && bash -c 'echo \"Email: ${PGADMIN_DEFAULT_EMAIL:-admin@example.com}\" && echo \"Password: ${PGADMIN_DEFAULT_PASSWORD:-admin}\" && echo \"URL: http://localhost:8080\" && wslview http://localhost:8080'",
+    "get-postgres-ip": "docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' postgres",
+    "pg:setup": "npm run pg:stop && npm run pg:start && npm run pgadmin:start && npm run get-postgres-ip"
   },
-  "author": "",
+  "author": "Clément",
   "license": "ISC",
-  "description": "",
+  "description": "Mini ERP - Backend",
   "dependencies": {
+    "axios": "^1.7.7",
     "express": "^4.21.0",
     "pg": "^8.13.0"
   },
