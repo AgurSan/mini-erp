@@ -4,3 +4,5 @@ features.md
 
 # Dossier de distribution
 dist/
+
+src/db/docker.md
